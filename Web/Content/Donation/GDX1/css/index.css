@@ -1,0 +1,237 @@
+﻿body{
+    
+}
+.wrapper-index .wrapper-header{
+    background:#fff;
+}
+.wrapper-index .wrapper-header img{
+    width:100%;
+}
+.wrapper-index .row-count{
+    display:-webkit-box;
+    margin:10px;
+    padding:10px;
+    background:#fff;
+    border-radius:5px;
+}
+.wrapper-index .row-count > * {
+    -webkit-box-flex:1;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    text-align:center;
+}
+.wrapper-index .row-count .money{
+    color:#db1313;
+}
+.wrapper-index .row-count .text{
+    margin-top:5px;
+    font-size:14px;
+    color:#aaa;
+}
+.wrapper-index .wrapper-body{
+    background:#fff;
+    padding-top:10px;
+}
+.wrapper-index .btn-suixi{
+    display:block;
+    text-align:center;
+    padding:10px 10px;
+    color:#fff;
+    background:#db1313;
+    width:120px;
+    margin:10px auto;
+    border-radius:5px;
+}
+.wrapper-index .name{
+    margin:20px 0px 10px 0px;
+    text-align:center;
+    font-size:18px;
+    color:#6b69e9;
+}
+.wrapper-index .name i{
+    font-size:20px;
+    margin-right:10px;
+}
+.wrapper-index .ganen{
+    text-align:center;
+}
+.wrapper-index .user-list{
+    margin-top:10px;
+    border-top:2px solid #ccc;
+    color:#666;
+        font-size:14px;
+}
+
+.wrapper-index .user-list .item{
+    display:-webkit-box;
+    padding:10px 15px;
+}
+    .wrapper-index .user-list .item img{
+        -webkit-box-flex:initial;
+        width:40px;
+        height:40px;
+        border-radius:40px;
+    }
+    .wrapper-index .user-list .item .member{
+        -webkit-box-flex:initial;
+        width:55px;
+        margin:0px 5px;
+    }
+    .wrapper-index .user-list .item .member .region{
+        font-size:12px;
+    }
+    .wrapper-index .user-list .item .message{
+        -webkit-box-flex:1;
+        font-size:12px;
+        margin-right:5px;
+        text-overflow: -o-ellipsis-lastline;  
+        overflow: hidden;  
+        text-overflow: ellipsis;  
+        display: -webkit-box;  
+        -webkit-line-clamp: 2;  
+        -webkit-box-orient: vertical; 
+    }
+    .wrapper-index .user-list .item .info{
+        text-align:right;
+    }
+    .wrapper-index .user-list .item .info .time {
+        font-size:12px;
+    }
+    .modal-order{
+        background-color:transparent;
+    }
+    .modal-order .top1{
+        background:#db1313;
+        height:60px;
+        border-radius:10px;
+        box-shadow:0px 2px #880a0a;
+        position:relative;
+        margin-bottom:-10px;
+    }
+        .modal-order .top1 img{
+            position:absolute;
+            left: 50%;
+            width:50px;
+            height:50px;
+            border-radius:50px;
+            top:35px;
+            margin-left:-25px;
+        }
+    .modal-order .member{
+        margin-top:50px;
+        text-align:center;
+    }
+        .modal-order .member a{
+            color:#fff;
+        }
+        .modal-order .modal-body{
+            background:#c21010;
+        }
+        .modal-order .money{
+            text-align:center;
+            margin-top:10px;
+            color:#f6d54c;
+            font-size:24px; 
+        }
+        .modal-order .input-money {
+            margin:0 20px;
+            display:-webkit-box;
+        }
+        .modal-order .input-money > * {
+            -webkit-box-flex:1;
+        }
+        .modal-order .input-money > .input {
+                padding:0px 10px 0px 0px;
+                margin:10px 0px;
+            }
+
+            .modal-order .input-money > .input input{
+                outline:0;
+                border:1px solid #f6d54c;
+                height:30px;
+                width:100%;
+                padding:0px 20px 0px 10px;
+                font-size:16px;
+            }
+            .modal-order .input-money > .text {
+                -webkit-box-flex:initial;
+                padding-top:5px;
+                margin-top:10px;
+                width:20px;
+                height:30px;
+                -webkit-box-align:center;
+                -webkit-box-pack:center;
+                font-size:16px;
+            }
+            .modal-order .message{
+                margin:10px 40px 10px 20px;
+            }
+            .modal-order .message textarea{
+                border:1px solid #f6d54c;
+                height:46px;
+                outline:0;
+                resize : none;
+                font-size:16px;
+                width:100%;
+                padding:10px;
+            }
+            .modal-order .anonymous{
+                margin:0px 0px 10px 20px;
+            }
+            .chk-label {
+                font-size:14px;
+                        cursor:pointer;
+                        color:#fff;
+            }
+            .chk-label i {
+                font-size:14px;font-style:normal;display:inline-block;
+                width:14px;height:14px;text-align:center;line-height:12px;color:#fff;
+                vertical-align:middle;margin:-2px 2px 1px 0px;
+                border:#fff 1px solid;
+                        margin-right:5px;
+            }
+                .chk-label i span{
+                    display:none;
+                }
+            .chk-label input[type="checkbox"]{
+                display:none;
+            }
+            .chk-label input[type="checkbox"]:checked + i {
+                background:#f6d54c;
+            }
+            .chk-label input[type="checkbox"]:checked + i span {
+                display:inline-block;
+            }
+        .modal-order .modal-footer {
+            background:#f6d54c;
+            display:-webkit-box;
+        }
+        .modal-order .modal-footer a{
+            display:block;
+            padding:10px;
+            border:1px solid #db1313;
+            margin:3px;
+            color:#db1313;
+            font-weight:900;
+        }
+         .modal-order .modal-footer .change{
+            background:#f6d54c;
+            -webkit-box-flex:initial;
+            width:120px;
+            text-align:center;
+        }
+         .modal-order .modal-footer .next{
+            background:#f6d54c;
+            -webkit-box-flex:1;
+            text-align:center;
+            position:relative;
+        }
+
+            .modal-order .modal-footer .next i{
+                position:absolute;
+                left:0px;
+                right:0px;
+                top:0px;
+                bottom:0px;
+                font-size:200px;
+            }

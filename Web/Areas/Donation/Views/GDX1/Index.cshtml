@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "善 建 者 行";
+}
+@section styles{
+    <link rel="stylesheet" href="/Content/Donation/GDX1/css/index.css?@ShiMiao.Common.Constants.ResourceVersion" />
+    <link rel="stylesheet" href="/Content/Base/font/iconfont.css?@ShiMiao.Common.Constants.ResourceVersion" />
+}
+
+<div class="wrapper wrapper-index">
+    <div class="wrapper-header">
+        <img src="~/Content/Donation/GDX1/images/gdx.png" />
+    </div>
+    <div class="row-count">
+        <div>
+            <div class="money">￥@ViewBag.TotalMoney</div>
+            <div class="text">已筹</div>
+        </div>
+        <div>
+            <div>@ViewBag.RecordCount</div>
+            <div class="text">人次</div>
+        </div>
+    </div>
+    <div class="wrapper-body">
+        <div>
+            <a class="btn-suixi" onclick="$.stone.showOrder(this, event)">随喜功德</a>
+        </div>
+        <div class="name"><i class="iconfont icon-simiao"></i>净名寺</div>
+        <div class="ganen">
+            感恩您的功德
+        </div>
+        <div class="user-list">
+                <div class="js-scroller"
+                     data-autoloadbottom="true"
+                     data-url="/Donation/GDX1/GetOrderList?oid=@ViewBag.EnOrgID"
+                     data-jstemplate="jsList"
+                     data-message-none="快来捐功德吧">
+                </div>
+            </div>
+    </div>
+    <div class="wrapper-header">
+        <img src="~/Content/Donation/GDX1/images/qrcode.jpg" />
+    </div>
+</div>
+<div class="modal modal-order hide">
+    <div class="top1">
+        <img class="header-image" src="@ViewBag.HeaderImage" data-header="@ViewBag.HeaderImage" />
+    </div>
+    <form>
+        <div class="modal-body">
+            <div class="member">
+                <a href="javascript:;" onclick="$.stone.showEdit(this)"><span class="member-nickname" data-nickname="@ViewBag.NickName">@ViewBag.NickName</span> @*<i class="iconfont icon-bianji"></i>*@</a>
+            </div>
+            <div class="money"><span></span></div>
+            <div class="input-money">
+                <div class="input">
+                    <input type="number" onkeyup="$.stone.changeMoney(this)" maxlength="6" placeholder="手动输入金额" />
+                </div>
+                <div class="text">
+                    <span>元</span>
+                </div>
+            </div>
+            <div class="message">
+                <textarea placeholder="请输入祈福内容（功德回向）" name="message"></textarea>
+            </div>
+            <div class="anonymous">
+                <label class="chk-label"><input type="checkbox" name="IsAnonymous" value="1" onchange="$.stone.changeAnonymous(this)"><i><span>✓</span></i>匿名</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="change">
+                <a href="javascript:;" onclick="$.stone.getRandom(this)">换个金额</a>
+                <input type="hidden" name="fee" />
+                <input type="hidden" name="name" />
+            </div>
+            <div class="next">
+                <a class="btn-submit"
+                   data-url="/Donation/GDX1/SaveOrder?oid=@ViewBag.EnOrgID"
+                   href="javascript:;"
+                   data-precall="$.stone.validateDonationForm"
+                   data-callback="$.stone.saveOrder"
+                   data-mask="true"
+                   data-mask-container=".modal-order"
+                   onclick="$.stone.submitForm(this)">下一步</a>
+            </div>
+        </div>
+    </form>
+</div>
+@section scripts{
+    <script src="/Content/Donation/GDX1/js/index.js?@ShiMiao.Common.Constants.ResourceVersion"></script>
+    @Html.Partial("/Views/Shared/ThirdShared.cshtml")
+    <script>
+        $(function () {
+            $.stone.initScroller();
+            $.stone.getRandom();
+        });
+    </script>
+    <script type="text/html" id="jsList">
+        {{each list as item i}}
+        <div class="item">
+            {{if item.HeaderImage != ""}}
+            {{if item.IsAnonymous == "1"}}
+            <img src="/Content/Donation/GDX1/images/default-header.png" />
+            {{else}}
+            <img src="{{item.HeaderImage}}" />
+            {{/if}}
+            {{/if}}
+            <div class="member">
+                {{if item.IsAnonymous == "1"}}
+                <div class="nickname">匿名</div>
+                {{else}}
+                <div class="nickname">{{item.NickName}}</div>
+                {{/if}}
+                <div class="region">{{item.Region}}</div>
+            </div>
+            <div class="message">
+                {{item.Message}}
+            </div>
+            <div class="info">
+                <div class="fee">{{item.Fee}}元</div>
+                <div class="time">{{item.PayTime}}</div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+}

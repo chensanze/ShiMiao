@@ -1,0 +1,57 @@
+﻿@using System.Web.Mvc.Html;
+@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "项目捐款";
+}
+@section styles{
+    <link rel="stylesheet" href="/Content/Donation/XMJK1/css/index.css?@ShiMiao.Common.Constants.ResourceVersion" />
+}
+<div class="wrapper donation">
+    <div class="wrapper-header">
+        <div class="title">项目捐款</div>
+    </div>
+    <div class="swiper-container js-swiper"
+         data-url="/Donation/XMJK1/GetTopAD?oid=@ViewBag.EnOrgID">
+    </div>
+    <div class="js-scroller donation-list"
+         data-url="/Donation/XMJK1/GetList?oid=@ViewBag.EnOrgID"
+         data-jstemplate="jsList"
+         data-mask="true"
+         data-message-none="没有数据">
+    </div>
+    @if (ViewBag.Footer != null)
+    {
+        @Html.Partial((string)ViewBag.Footer)
+    }
+</div>
+@section scripts{
+    <script src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.min.js"></script>
+    @Html.Partial("/Views/Shared/ThirdShared.cshtml")
+    <script src="/Content/Donation/XMJK1/js/index.js?@ShiMiao.Common.Constants.ResourceVersion"></script>
+    <script>
+        $(function () {
+            $.stone.initSwiper();
+            $.stone.initScroller();
+        });
+    </script>
+    <script type="text/html" id="jsList">
+        {{each list as item}}
+        <div class="item" onclick="$.stone.openDetail(this)"
+             data-url="/Donation/XMJK1/Detail?oid=@ViewBag.EnOrgID&id={{item.id}}">
+            <div class="item-left">
+                {{if item.ImageURL != null}}
+                <div class="item-image">
+                    <img src="{{item.ImageURL}}">
+                </div>
+                {{/if}}
+            </div>
+            <div class="item-right">
+                <div class="title">
+                    {{item.Title}}
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+}

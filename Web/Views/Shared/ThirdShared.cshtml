@@ -1,0 +1,21 @@
+﻿@if (ViewBag.ShareInfo == null)
+{
+    ViewBag.ShareInfo = new Stone.WeiXin.ThirdSharedInfo();
+}
+
+<div class="share-info hide">
+    <input type="text" name="share-info-title" value="@ViewBag.ShareInfo.Title" />
+    <input type="text" name="share-info-content" value="@ViewBag.ShareInfo.Content" />
+    <input type="text" name="share-info-image" value="@ViewBag.ShareInfo.Image" />
+    <input type="text" name="share-info-appId" value="@ViewBag.ShareInfo.AppID" />
+    <input type="text" name="share-info-timestamp" value="@ViewBag.ShareInfo.Timestamp" />
+    <input type="text" name="share-info-nonceStr" value="@ViewBag.ShareInfo.NonceStr" />
+    <input type="text" name="share-info-signature" value="@ViewBag.ShareInfo.Signature" />
+</div>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="/Content/Base/js/wx_share.js?@ShiMiao.Common.Constants.ResourceVersion"></script>
+<script>
+    $(function () {
+        $.stone.initShare();
+    });
+</script>

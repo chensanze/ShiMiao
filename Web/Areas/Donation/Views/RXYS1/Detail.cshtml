@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "支付";
+    ViewBag.BodyClass = "detail-body";
+}
+@section styles{
+    <link rel="stylesheet" href="/Content/Donation/RXYS1/css/index.css?@ShiMiao.Common.Constants.ResourceVersion" />
+}
+<div class="wrapper wrapper-detail">
+    <div class="title">行一日善  结十方缘</div>
+    <form>
+        <div class="detail-money-container">
+            <div class="detail-money">
+                <div class="text">我要乐捐：￥</div>
+                <div class="input">
+                    <input class="money" name="fee" value="@ViewBag.Money" maxlength="6" />
+                </div>
+            </div>
+            <div class="button">
+                <a class="btn-change" href="javascript:;" onclick="$.stone.getRandom(this)">换个金额</a>
+            </div>
+        </div>
+        <div class="detail-link">
+            <div class="title">联系方式</div>
+            <div class="body">
+                <div class="body-item">
+                    <div class="text">功德芳名：</div>
+                    <div class="input">
+                        <input name="name" maxlength="10" />
+                    </div>
+                </div>
+                <div class="body-item">
+                    <div class="text">电　　话：</div>
+                    <div class="input">
+                        <input name="mobile" maxlength="11" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="detail-memo">
+            <div class="title">功德回向</div>
+            <div class="body">
+                <textarea maxlength="500" name="message"></textarea>
+            </div>
+        </div>
+        <div class="detail-submit">
+            <a class="btn-submit" data-url="/Donation/RXYS1/SaveOrder?oid=@ViewBag.EnOrgID" href="javascript:;" data-callback="$.stone.saveOrder" data-mask="true" onclick="$.stone.submitForm(this)">微信支付</a>
+        </div>
+    </form>
+</div>
+@section scripts{
+    <script src="/Content/Donation/RXYS1/js/index.js?@ShiMiao.Common.Constants.ResourceVersion"></script>
+    @Html.Partial("/Views/Shared/ThirdShared.cshtml")
+    <script>
+        $(function () {
+            $.stone.initSwiper();
+            $.stone.initMoneyItem();
+        });
+    </script>
+}

@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "日行一善";
+    ViewBag.BodyClass = "index-body";
+}
+@section styles{
+    <link rel="stylesheet" href="/Content/Donation/RXYS1/css/index.css?@ShiMiao.Common.Constants.ResourceVersion" />
+}
+<div class="wrapper wrapper-index">
+    <div class="btn1-container">
+        <a href="/Donation/RXYS1/List?oid=@ViewBag.EnOrgID" target="_blank">
+            <img src="~/Content/Donation/RXYS1/images/btn1.png" />
+        </a>
+    </div>
+</div>
+@section scripts{
+    @Html.Partial("/Views/Shared/ThirdShared.cshtml")
+}

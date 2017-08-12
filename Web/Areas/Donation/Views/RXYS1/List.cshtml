@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "善心随喜";
+    ViewBag.BodyClass = "list-body";
+}
+@section styles{
+    <link rel="stylesheet" href="/Content/Donation/RXYS1/css/index.css?@ShiMiao.Common.Constants.ResourceVersion" />
+}
+<div class="wrapper wrapper-list">
+    <div class="item-list">
+        <div class="item">
+            <a class="item-inner" href="/Donation/RXYS1/Detail?oid=@ViewBag.EnOrgID&m=1">
+                <img src="~/Content/Donation/RXYS1/images/1元.png" />
+            </a>
+        </div>
+        <div class="item">
+            <a class="item-inner" href="/Donation/RXYS1/Detail?oid=@ViewBag.EnOrgID&m=10">
+                <img src="~/Content/Donation/RXYS1/images/10元.png" />
+            </a>
+        </div>
+        <div class="item">
+            <a class="item-inner" href="/Donation/RXYS1/Detail?oid=@ViewBag.EnOrgID&m=20">
+                <img src="~/Content/Donation/RXYS1/images/20元.png" />
+            </a>
+        </div>
+        <div class="item">
+            <a class="item-inner" href="/Donation/RXYS1/Detail?oid=@ViewBag.EnOrgID&m=r">
+                <img src="~/Content/Donation/RXYS1/images/善心随喜.png" />
+            </a>
+        </div>
+    </div>
+</div>
+@section scripts{
+    @Html.Partial("/Views/Shared/ThirdShared.cshtml")
+}

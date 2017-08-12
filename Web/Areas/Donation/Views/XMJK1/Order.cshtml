@@ -1,0 +1,78 @@
+﻿@using System.Web.Mvc.Html;
+@inherits System.Web.Mvc.WebViewPage<ShiMiao.Model.TD_Donation_Info>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "项目捐款";
+    ViewBag.BodyStyle = "background:#fff";
+}
+@section styles{
+    <link rel="stylesheet" href="/Content/Base/font/iconfont.css?@ShiMiao.Common.Constants.ResourceVersion" />
+    <link rel="stylesheet" href="/Content/Donation/XMJK1/css/index.css?@ShiMiao.Common.Constants.ResourceVersion" />
+}
+<div class="wrapper donation-order">
+    <div class="wrapper-header">
+        <a href="/Donation/XMJK1/Index?oid=@ViewBag.EnOrgID" class="home iconfont icon-home"></a>
+        <div href="javascript:;" class="title">项目捐款</div>
+        <a href="javascript:;"></a>
+    </div>
+    <div class="wrapper-body">
+        <div class="body-title">@Model.Title</div>
+        <div class="money-list">
+            <div class="item">
+                <div class="inner-item">
+                    <div class="money-item" data-fee="10">10元</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner-item">
+                    <div class="money-item" data-fee="20">20元</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner-item">
+                    <div class="money-item" data-fee="100">100元</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner-item">
+                    <div class="money-item selected" data-fee="auto">随喜</div>
+                </div>
+            </div>
+        </div>
+        <form>
+            <div class="hide">
+                <input type="hidden" name="DonationID" value="@Model.DonationID" />
+            </div>
+            <div class="form-item money">
+                <i class="iconfont icon-money"></i>
+                <input type="number" name="fee" class="fee" placeholder="请输入捐款金额" />
+            </div>
+            <div class="form-item">
+                <i class="iconfont icon-ff-user"></i>
+                <input type="text" name="name" class="name" placeholder="请输入姓名或单位" />
+            </div>
+            <div class="form-item">
+                <i class="iconfont icon-mobile"></i>
+                <input type="number" name="mobile" class="mobile" placeholder="请输入手机号码" />
+            </div>
+            <div class="btn-container">
+                <a class="btn-default" data-url="/Donation/XMJK1/SaveOrder?oid=@ViewBag.EnOrgID" href="javascript:;" data-callback="$.stone.saveOrder" data-mask="true" onclick="$.stone.submitForm(this)" >微信支付</a>
+            </div>
+        </form>
+    </div>
+    @if (ViewBag.Footer != null)
+    {
+        @Html.Partial((string)ViewBag.Footer)
+    }
+</div>
+@section scripts{
+    <script src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.min.js"></script>
+    <script src="/Content/Donation/XMJK1/js/index.js?@ShiMiao.Common.Constants.ResourceVersion"></script>
+    @Html.Partial("/Views/Shared/ThirdShared.cshtml")
+    <script>
+        $(function () {
+            $.stone.initSwiper();
+            $.stone.initMoneyItem();
+        });
+    </script>
+}

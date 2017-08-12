@@ -1,0 +1,219 @@
+﻿
+@{
+    ViewBag.Title = "净名修缮，善建者行";
+}
+@section styles{
+    <link href="http://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Content/Base/font/iconfont.css?@ShiMiao.Common.Constants.ResourceVersion" />
+    <link href="/Content/Shop/Goods2/css/index.css?@ShiMiao.Common.Constants.ResourceVersion" rel="stylesheet" />
+}
+<div class="wrapper wrapper-index">
+    <div>
+        <img class="top-image" src="~/Content/Shop/Goods2/images/barner_yf.jpg" />
+    </div>
+    <div class="audio-container">
+        <a href="javascript:;" onclick="$.stone.playAudio(this)">
+            <img class="animated slowwheel infinite" src="~/Content/Shop/Goods2/images/audio.png" />
+        </a>
+        <audio class="hide" id="audios" preload="auto" controls src="~/Content/Shop/Goods2/mp3/wspsxz.mp3" loop></audio>
+    </div>
+    <div class="wrapper-bar">
+        <img src="~/Content/Shop/Goods2/images/gzft01.png" />
+    </div>
+    @*<div class="js-marquee order-marquee">
+        <div class="js-pager order-list"
+             data-url="/Shop/Goods2/GetOrderList?oid=@ViewBag.EnOrgID"
+             data-callback="$.stone.initMarquee"
+             data-jstemplate="jsOrderList">
+        </div>
+    </div>*@
+    <div class="wrapper-bar">
+        <img src="~/Content/Shop/Goods2/images/gzftbg.png" />
+    </div>
+    <div class="row-count">
+        <div class="img-sylz">
+            <img class="fo-image" src="~/Content/Org/JMS/logo.jpg" /><span class="text">随缘乐助<span class="count1"> @ViewBag.RecordCount</span> 人次，功德无量 ！</span>
+        </div>
+    </div>
+    <div class="wrapper-bar">
+        <img src="~/Content/Shop/Goods2/images/gzft02.png" />
+    </div>
+    <div class="js-scroller goods-list"
+         data-autoloadbottom="true"
+         data-url="/Shop/Goods2/GetList?oid=@ViewBag.EnOrgID"
+         data-callback="$.stone.loadGoodsList"
+         data-jstemplate="jsList">
+    </div>
+    <div class="liang">
+        <img src="/Content/Shop/Goods2/images/gzft07.png" />
+        <div class="box liang-item">
+            <div class="initial liang-title">大梁</div>
+            <div>
+                <div class="info">
+                    <div class="left">
+                        <div class="title">A<span class="amount">尺寸8000mmx500mm</span></div>
+                        <div class="price"><span>￥</span>40000/<span>根</span><span class="amount"></span></div>
+                    </div>
+                    <div class="right">
+                        <form>
+                            <input type="hidden" name="goodsID" value="9918ac35-a983-40c8-822a-2a71d4866c0f" />
+                            <div>
+                                <div class="click-number" data-step="1" data-min="1">
+                                    <a href="javascript:;" class="btn-default decrease">-</a>
+                                    <input type="number" name="Amount" value="1" class="form-control number">
+                                    <a href="javascript:;" class="btn-default add">+</a>
+                                </div>
+                            </div>
+                            <a class="btn-donation" href="javascript:;" data-callback="$.stone.saveOrder" data-mask="true" data-url="/Shop/Goods2/SaveOrder?oid=@ViewBag.EnOrgID" onclick="$.stone.submitForm(this)">
+                                <img src="/Content/Shop/Goods2/images/renlin.png" />
+                            </a>
+                        </form>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="left">
+                        <div class="title">B<span class="amount">尺寸7000mmx500mm</span></div>
+                        <div class="price"><span>￥</span>30000/<span>根</span><span class="amount"></span></div>
+                    </div>
+                    <div class="right">
+                        <form>
+                            <input type="hidden" name="goodsID" value="3a2a9ebe-9900-4ede-966f-23e343c09445" />
+                            <div>
+                                <div class="click-number" data-step="1" data-min="1">
+                                    <a href="javascript:;" class="btn-default decrease">-</a>
+                                    <input type="number" name="Amount" value="1" class="form-control number">
+                                    <a href="javascript:;" class="btn-default add">+</a>
+                                </div>
+                            </div>
+                            <a class="btn-donation" href="javascript:;" data-callback="$.stone.saveOrder" data-mask="true" data-url="/Shop/Goods2/SaveOrder?oid=@ViewBag.EnOrgID" onclick="$.stone.submitForm(this)">
+                                <img src="/Content/Shop/Goods2/images/renlin.png" />
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box liang-item">
+            <div class="initial liang-title">副梁</div>
+            <div>
+                <div class="info">
+                    <div class="left">
+                        <div class="title">A<span class="amount">尺寸6000mmx450mm</span></div>
+                        <div class="price"><span>￥</span>20000/<span>根</span><span class="amount"></span></div>
+                    </div>
+                    <div class="right">
+                        <form>
+                            <input type="hidden" name="goodsID" value="fbc6178f-ba45-4376-b0e1-fe22c36d564b" />
+                            <div>
+                                <div class="click-number" data-step="1" data-min="1">
+                                    <a href="javascript:;" class="btn-default decrease">-</a>
+                                    <input type="number" name="Amount" value="1" class="form-control number">
+                                    <a href="javascript:;" class="btn-default add">+</a>
+                                </div>
+                            </div>
+                            <a class="btn-donation" href="javascript:;" data-callback="$.stone.saveOrder" data-mask="true" data-url="/Shop/Goods2/SaveOrder?oid=@ViewBag.EnOrgID" onclick="$.stone.submitForm(this)">
+                                <img src="/Content/Shop/Goods2/images/renlin.png" />
+                            </a>
+                        </form>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="left">
+                        <div class="title">B<span class="amount">尺寸4000mmx300mm</span></div>
+                        <div class="price"><span>￥</span>5000/<span>根</span><span class="amount"></span></div>
+                    </div>
+                    <div class="right">
+                        <form>
+                            <input type="hidden" name="goodsID" value="e49e5b82-83ce-417d-8591-aa216e195099" />
+                            <div>
+                                <div class="click-number" data-step="1" data-min="1">
+                                    <a href="javascript:;" class="btn-default decrease">-</a>
+                                    <input type="number" name="Amount" value="1" class="form-control number">
+                                    <a href="javascript:;" class="btn-default add">+</a>
+                                </div>
+                            </div>
+                            <a class="btn-donation" href="javascript:;" data-callback="$.stone.saveOrder" data-mask="true" data-url="/Shop/Goods2/SaveOrder?oid=@ViewBag.EnOrgID" onclick="$.stone.submitForm(this)">
+                                <img src="/Content/Shop/Goods2/images/renlin.png" />
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="llsjmnfx">
+        <form>
+            <input type="hidden" name="goodsID" value="e540dac1-171f-4b75-a852-612de07a9550" />
+            <img src="~/Content/Shop/Goods2/images/gzft08.png" />
+            <div class="info">
+                <div class="left">
+                    <div class="title">琉璃释迦牟尼佛像</div>
+                    <div class="price"><span>￥</span>50000/<span>尊</span></div>
+                </div>
+                <div class="right">
+                    <div>
+                        <div class="click-number" data-step="1" data-min="1">
+                            <a href="javascript:;" class="btn-default decrease">-</a>
+                            <input type="number" name="Amount" value="1" class="form-control number">
+                            <a href="javascript:;" class="btn-default add">+</a>
+                        </div>
+                    </div>
+                    <a class="btn-donation" href="javascript:;" data-callback="$.stone.saveOrder" data-mask="true" data-url="/Shop/Goods2/SaveOrder?oid=@ViewBag.EnOrgID" onclick="$.stone.submitForm(this)">
+                        <img src="/Content/Shop/Goods2/images/renlin.png" />
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@section scripts{
+    <script src="/Content/Marquee/js/jquery.kxbdmarquee.js"></script>
+    <script src="/Content/Shop/Goods2/js/index.js?@ShiMiao.Common.Constants.ResourceVersion"></script>
+    @Html.Partial("/Views/Shared/ThirdShared.cshtml")
+    <script>
+        $(function () {
+            //$.stone.initJsPager();
+            $.stone.initScroller();
+        });
+    </script>
+    <script id="jsOrderList" type="text/html">
+        {{each list as item i}}
+        <div class="order-item">
+            <div class="time">{{item.OrderTime}}</div>
+            <div class="nickname">{{item.NickName}}</div>
+            <div class="title">{{item.Title}}</div>
+            <div class="price">计{{item.RealPrice}}元</div>
+        </div>
+        {{/each}}
+    </script>
+    <script type="text/html" id="jsList">
+        {{each list as item i}}
+        <div class="item">
+            <form>
+                <input type="hidden" name="goodsID" value="{{item.GoodsID}}" />
+                {{if item.Image != ""}}
+                <img class="goods-image" src="{{item.Image}}" />
+                {{/if}}
+                <div class="info">
+                    <div class="left">
+                        <div class="title">{{item.Title}}<span class="amount">（<span class="amount">{{item.Amount - item.Balance - item.Frozen}}</span>人已捐，剩余<span>{{item.Balance}}</span>份）</span></div>
+                        <div class="price"><span>￥</span>{{item.Price}}/<span>{{item.Unit}}</span></div>
+                    </div>
+                    <div class="right">
+                        <div>
+                            <div class="click-number" data-step="1" data-min="1">
+                                <a href="javascript:;" class="btn-default decrease">-</a>
+                                <input type="number" name="Amount" value="1" class="form-control number">
+                                <a href="javascript:;" class="btn-default add">+</a>
+                            </div>
+                        </div>
+                        <a class="btn-donation" href="javascript:;" data-callback="$.stone.saveOrder" data-mask="true"  data-url="/Shop/Goods2/SaveOrder?oid=@ViewBag.EnOrgID" onclick="$.stone.submitForm(this)">
+                            <img src="/Content/Shop/Goods2/images/renlin.png" />
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        {{/each}}
+    </script>
+}

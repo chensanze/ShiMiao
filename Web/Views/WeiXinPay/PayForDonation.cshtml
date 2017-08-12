@@ -1,0 +1,52 @@
+﻿@model ShiMiao.Model.TD_Donation_Order
+@{
+    ViewBag.Title = "支付页面";
+}
+@section styles{
+    <link href="/Content/Pay/css/index.css?@ShiMiao.Common.Constants.ResourceVersion" rel="stylesheet" />
+}
+<div class="wrapper wrapper-bottom hide">
+    <form>
+        <div class="hidden">
+            <input type="hidden" name="OrderID" value="@Model.OrderID" />
+        </div>
+        <div></div>
+        <div class="form-detail empty-top">
+            <div class="items">
+                <div class="item"><label>捐款单号</label><span>@Model.OrderID</span></div>
+                <div class="item"><label>捐款时间</label><span>@Model.OrderTime.Value.ToString("yyyy-MM-dd HH:mm:ss")</span></div>
+                <div class="item"><label>捐款金额</label><span class="goods-price">￥@Model.Fee</span></div>
+            </div>
+        </div>
+        <div class="btn-container">
+            @if (ViewBag.ThirdPortConfig != null)
+            {
+                <a class="btn-pay pay" href="javascript:;" onclick="$.stone.weiXinPay(this)"
+                   data-appid="@ViewBag.ThirdPortConfig.AppID"
+                   data-noncestr="@ViewBag.ThirdPortConfig.NonceStr"
+                   data-timestamp="@ViewBag.ThirdPortConfig.Timestamp"
+                   data-package="@ViewBag.ThirdPortConfig.Package"
+                   data-signtype="@ViewBag.ThirdPortConfig.SignType"
+                   data-signature="@ViewBag.ThirdPortConfig.Signature"
+                   data-paysignature="@ViewBag.ThirdPortConfig.PaySignature"
+                   data-url="/WeiXinPay/OK?oid=@ViewBag.EnOrgID&url=@ViewBag.BackURL"
+                   data-cancelurl="">确认支付</a>
+            }
+            else
+            {
+            <a class="btn-default btn-pay" href="javascript:;">未开通微信支付</a>
+            }
+        </div>
+    </form>
+</div>
+@section scripts{
+    <script src="/Content/Base/js/wx_pay.js?@ShiMiao.Common.Constants.ResourceVersion"></script>
+    <script>
+        $(function () {
+            var $pay = $(".pay");
+            if ($pay.length > 0) {
+                InitPay($pay);
+            }
+        });
+    </script>
+}

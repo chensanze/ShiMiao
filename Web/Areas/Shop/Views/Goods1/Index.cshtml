@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "净名修缮，善建者行";
+}
+@section styles{
+    <link href="http://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Content/Base/font/iconfont.css?@ShiMiao.Common.Constants.ResourceVersion" />
+    <link href="/Content/Shop/Goods1/css/index.css?@ShiMiao.Common.Constants.ResourceVersion" rel="stylesheet" />
+}
+<div class="wrapper wrapper-index">
+    <div>
+        <img class="top-image" src="~/Content/Shop/Goods1/images/barner_yf.jpg" />
+    </div>
+    <div class="audio-container">
+        <a href="javascript:;" onclick="$.stone.playAudio(this)">
+            <img class="animated slowwheel infinite" src="~/Content/Shop/Goods1/images/audio.png" />
+        </a>
+        <audio class="hide" id="audios" preload="auto" controls src="~/Content/Shop/Goods1/mp3/wspsxz.mp3" loop></audio>
+    </div>
+    <div class="wrapper-bar">
+        净名修缮　善建者行
+    </div>
+    @*<div class="js-marquee order-marquee">
+        <div class="js-pager order-list"
+             data-url="/Shop/Goods1/GetOrderList?oid=@ViewBag.EnOrgID"
+             data-callback="$.stone.initMarquee"
+             data-jstemplate="jsOrderList">
+        </div>
+    </div>*@
+    <div class="img-sylz">
+        <div>&nbsp;</div>
+        <div>
+            <img class="fo-image" src="~/Content/Org/JMS/logo.jpg" />
+        </div>
+        <div class="row-count">
+            <div class="text">随缘乐助，功德无量 ！</div>
+            <div class="count"><span class="count1">@ViewBag.RecordCount</span> 人次 ，<span class="count2">￥@ViewBag.TotalMoney</span>元</div>
+        </div>
+        <div>&nbsp;</div>
+    </div>
+    <div class="wrapper-bar">
+        日行一善　佛光护佑
+    </div>
+    <div class="js-scroller goods-list"
+         data-autoloadbottom="true"
+         data-url="/Shop/Goods1/GetList?oid=@ViewBag.EnOrgID"
+         data-callback="$.stone.loadGoodsList"
+         data-jstemplate="jsList">
+    </div>
+</div>
+@section scripts{
+    <script src="/Content/Marquee/js/jquery.kxbdmarquee.js"></script>
+    <script src="/Content/Shop/Goods1/js/index.js?@ShiMiao.Common.Constants.ResourceVersion"></script>
+    @Html.Partial("/Views/Shared/ThirdShared.cshtml")
+    <script>
+        $(function () {
+            //$.stone.initJsPager();
+            $.stone.initScroller();
+        });
+    </script>
+    <script id="jsOrderList" type="text/html">
+        {{each list as item i}}
+        <div class="order-item">
+            <div class="time">{{item.OrderTime}}</div>
+            <div class="nickname">{{item.NickName}}</div>
+            <div class="title">{{item.Title}}</div>
+            <div class="price">计{{item.RealPrice}}元</div>
+        </div>
+        {{/each}}
+    </script>
+    <script type="text/html" id="jsList">
+        {{each list as item i}}
+        <div class="item">
+            <form>
+                <input type="hidden" name="goodsID" value="{{item.GoodsID}}" />
+                {{if item.Image != ""}}
+                <img class="goods-image" src="{{item.Image}}" />
+                {{/if}}
+                <div class="info">
+                    <div class="left">
+                        <div class="title">{{item.Title}}<span class="price"><span>￥</span>{{item.Price}}/<span>份</span></span></div>
+                        <div class="amount"><span>{{item.Amount - item.Balance - item.Frozen}}</span>人已捐，剩余<span>{{item.Balance}}</span>份</div>
+                    </div>
+                    <div class="right">
+                        <div>
+                            <div class="click-number" data-step="1" data-min="1">
+                                <a href="javascript:;" class="btn-default decrease">-</a>
+                                <input type="number" name="Amount" value="1" class="form-control number">
+                                <a href="javascript:;" class="btn-default add">+</a>
+                            </div>
+                        </div>
+                        <a class="btn-donation" href="javascript:;" data-callback="$.stone.saveOrder" data-mask="true"  data-url="/Shop/Goods1/SaveOrder?oid=@ViewBag.EnOrgID" onclick="$.stone.submitForm(this)"><i class="iconfont icon-love"></i>认捐</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        {{/each}}
+    </script>
+}

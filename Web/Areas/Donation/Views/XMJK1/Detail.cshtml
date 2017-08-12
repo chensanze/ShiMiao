@@ -1,0 +1,142 @@
+﻿@using System.Web.Mvc.Html;
+@inherits System.Web.Mvc.WebViewPage<ShiMiao.Model.TD_Donation_Info>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "项目捐款";
+}
+@section styles{
+    <link href="http://cdn.bootcss.com/Swiper/3.4.2/css/swiper.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Content/Base/font/iconfont.css?@ShiMiao.Common.Constants.ResourceVersion" />
+    <link rel="stylesheet" href="/Content/Donation/XMJK1/css/index.css?@ShiMiao.Common.Constants.ResourceVersion" />
+}
+<div class="wrapper donation-detail">
+    <div class="wrapper-header">
+        <a href="/Donation/XMJK1/Index?oid=@ViewBag.EnOrgID" class="home iconfont icon-home"></a>
+        <div href="javascript:;" class="title">项目捐款</div>
+        <a href="javascript:;"></a>
+    </div>
+    <div class="swiper-container js-swiper"
+         data-url="/Donation/XMJK1/GetDetailImage?oid=@ViewBag.EnOrgID"
+         data-args-id="@Model.DonationID">
+    </div>
+    <div class="wrapper-body">
+        <div class="btn-container">
+            <a href="/Donation/XMJK1/Order?oid=@ViewBag.EnOrgID&id=@Model.DonationID" class="btn-default">我要捐款</a>
+        </div>
+        <div class="tab-container" data-autoloadbottom="true" data-noswiping="true">
+            <ul class="tab-container-tabs">
+                <li><i class="iconfont icon-detail" style="font-size:0.8rem;"></i> 项目介绍</li>
+                <li><i class="iconfont icon-liuyan" style="font-size:0.8rem;"></i> 留言</li>
+            </ul>
+            <div class="swiper-container tab-container-content">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="item">
+                            <div class="item-body limit-image">
+                                @Model.Content
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-title">
+                                <i class="iconfont icon-list"></i>捐赠列表
+                            </div>
+                            <div class="item-body">
+                                <div class="js-pager order-list"
+                                     data-args-id="@Model.DonationID"
+                                     data-url="/Donation/XMJK1/GetOrderList?oid=@ViewBag.EnOrgID"
+                                     data-jstemplate="jsOrderList"
+                                     data-callback="$.stone.loadOrderListCallBack"
+                                     data-isappend="true"
+                                     data-mask="true"
+                                     data-message-none="还没有人捐款">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="js-scroller"
+                             data-args-id="@Model.DonationID"
+                             data-autoloadbottom="true"
+                             data-url="/Donation/XMJK1/GetLeaveMessageList?oid=@ViewBag.EnOrgID"
+                             data-jstemplate="jsList"
+                             data-message-none="还没有人留言">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (ViewBag.Footer != null)
+    {
+        @Html.Partial((string)ViewBag.Footer)
+    }
+</div>
+<div class="wrapper wrapper-overlay wrapper-leavemsg hide">
+    <div class="wrapper-body">
+        <div class="wrapper wrapper-bottom">
+            <div class="wrapper-header">
+                <div class="form-detail no-bottom">
+                    <div class="items">
+                        <div class="item title">
+                            <span class="left">留言</span>
+                            <a href="javascript:;" class="btn-icon icon-cancel-circled-1" onclick="$.stone.closeCancelOrder(this)"></a>
+                        </div>
+                        <div class="leavemsg-list">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="form-order">
+                <div class="form-detail">
+                    <input type="hidden" name="DonationID" value="@Model.DonationID" />
+                    <div class="items">
+                        <div class="item">
+                            <textarea rows="5" name="Message" class="item-textarea" maxlength="500" placeholder="必填，最多500字"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <a href="javascript:;" data-url="/Donation/SaveLeaveMessage" data-mask="true" class="btn-default" onclick="$.stone.submitForm(this)">确定</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.min.js"></script>
+    <script src="/Content/Donation/XMJK1/js/index.js?@ShiMiao.Common.Constants.ResourceVersion"></script>
+    @Html.Partial("/Views/Shared/ThirdShared.cshtml")
+    <script>
+        $(function () {
+            $.stone.initSwiper();
+            $.stone.initJsPager();
+            $.stone.initTabs();
+            $.stone.initScroller();
+        });
+    </script>
+    <script id="jsOrderList" type="text/html">
+        {{each list as item i}}
+        <div class="order-item">
+            <div class="nickname">{{item.NickName}}</div>
+            <div class="fee">￥{{item.Fee}}</div>
+            <div class="paytime">{{item.PayTime}}</div>
+        </div>
+        {{/each}}
+    </script>
+<script type="text/html" id="jsList">
+        {{each list as item i}}
+        <div class="item">
+            <div class="member">
+                {{if item.HeaderImage != ""}}
+                <img src="{{item.HeaderImage}}" />
+                {{/if}}
+                <div>{{item.NickName}}</div>
+            </div>
+            <div class="info">
+                <div class="content">{{#item.Message}}</div>
+                <div class="time">{{item.CreateTime}}</div>
+            </div>
+        </div>
+        {{/each}}
+</script>
+}

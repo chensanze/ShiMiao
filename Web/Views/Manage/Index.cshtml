@@ -1,0 +1,14 @@
+﻿
+@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "管理";
+}
+@section styles{
+    <link rel="stylesheet" href="/Content/Donation/XMJK1/css/index.css?@ShiMiao.Common.Constants.ResourceVersion" />
+}
+
+<div class="btn-container">
+    <a class="btn-default" data-url="/Manage/CreateMenu" href="javascript:;" data-mask="true" onclick="$.stone.ajaxTodo(this)">创建微信菜单</a>
+</div>
+

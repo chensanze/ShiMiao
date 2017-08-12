@@ -1,0 +1,232 @@
+﻿body{
+    background:#fff;
+}
+.wrapper-index .top-image{
+    width:100%;
+}
+.wrapper-index .wrapper-bar img{
+    width:100%;
+}
+.wrapper-index .audio-container{
+    position:absolute;
+    top:20px;
+    right:20px;
+    border-radius:38px;
+}
+.row-count{
+    background:#fff;
+}
+.wrapper-index .img-sylz{
+    font-size:14px;
+    padding:5px 0px;
+    background:#fff;
+    text-align:center;
+    margin:0 auto;
+    display:table;
+}
+.wrapper-index .img-sylz .fo-image{
+    width:16px;
+    margin-right:10px;
+    float:left;
+}
+    .wrapper-index .img-sylz .text {
+        float:left;
+    }
+    .wrapper-index .img-sylz:after{
+        content: "";
+            display: block;
+            line-height: 0;
+            clear: both;
+    }
+    .wrapper-index .img-sylz .count1{
+        color:#bb2020;
+    }
+.wrapper-index .goods-list{
+    background:#fff;
+}
+.wrapper-index .goods-list .item{
+    margin:10px 10px;
+    padding:0px;
+    border:1px solid #ccc;
+}
+    .wrapper-index .goods-list .item .goods-image{
+        width:100%;
+    }
+      .wrapper-index .goods-list .item .info{
+          display:-webkit-box;
+          background:#fff;
+          padding:5px 10px;
+      }
+      .wrapper-index .goods-list .item .left{
+          -webkit-box-flex:1;
+      }
+    .wrapper-index .goods-list .item .price{
+        color:#bb2020;
+        font-size:14px;
+        margin-top:10px;
+    }
+    .wrapper-index .goods-list .item .amount{
+        margin-top:10px;
+        color:#888;
+        font-size:11px;
+    }
+   .wrapper-index .goods-list .item .btn-donation{
+       display:block;
+       color:#fff;
+       font-size:14px;
+       text-align:center;
+       letter-spacing:3px;
+       margin-top:5px;
+   }
+    .wrapper-index .goods-list .item .btn-donation img{
+        width:80px;
+    }
+   .wrapper-index .order-list{
+       margin:0px 10px;
+       font-size:12px;
+   }
+   .wrapper-index .order-marquee{
+       max-height:150px;
+       overflow:hidden;
+   }
+   .wrapper-index .order-list .order-item{
+       padding:5px 0px;
+       display:-webkit-box;
+   }
+    .wrapper-index .order-list .order-item >* {
+        -webkit-box-flex:initial;
+    }
+    .wrapper-index .order-list .order-item >.time {
+        width:80px;
+        overflow:hidden;
+    }
+    .wrapper-index .order-list .order-item >.nickname {
+        -webkit-box-flex:1;
+        width:0;
+        overflow:hidden;
+        -webkit-box-align:start;
+    }
+    .wrapper-index .order-list .order-item >.title {
+        width:0;
+        -webkit-box-flex:2;
+        overflow:hidden;
+        -webkit-box-align:start;
+    }
+    .wrapper-index .order-list .order-item >.price {
+        width:60px;
+        overflow:hidden;
+    }
+    .wrapper-index .liang{
+        margin:0px 10px 10px 10px;
+        border:1px solid #ccc;
+    }
+    .wrapper-index .liang img{
+        width:100%;
+    }
+    .wrapper-index .liang .info{
+          display:-webkit-box;
+          background:#fff;
+          margin:5px 0px;
+            border-bottom:1px dashed #ccc;
+            padding-bottom:5px;
+    }
+    .wrapper-index .liang .info:last-child{
+        border-bottom:0px;
+        padding-bottom:0px;
+    }
+    .wrapper-index .liang .liang-item{
+        border-bottom:1px solid #ccc;
+        margin:0px 10px;
+    }
+    .wrapper-index .liang .liang-item:last-child{
+        border-bottom:0px;
+    }
+.wrapper-index .liang .info .title{
+    font-weight:bold;
+}
+.wrapper-index .liang .liang-title{
+    font-weight:bold;
+    padding:0px 10px;
+    width:18px;
+    font-size:18px;
+}
+      .wrapper-index .liang .left{
+          -webkit-box-flex:1;
+      }
+    .wrapper-index .liang .price{
+        color:#bb2020;
+        font-size:14px;
+        margin-top:10px;
+    }
+    .wrapper-index .liang .amount{
+        margin-left:5px;
+        margin-top:10px;
+        color:#888;
+        font-size:11px;
+    }
+   .wrapper-index .liang .btn-donation{
+       display:block;
+       color:#fff;
+       font-size:14px;
+       text-align:center;
+       letter-spacing:3px;
+       margin-top:5px;
+   }
+    .wrapper-index .liang .btn-donation img{
+        width:80px;
+    }
+    .wrapper-index .llsjmnfx{
+        margin:0px 10px 10px 10px;
+        border:1px solid #ccc;
+    }
+    .wrapper-index .llsjmnfx img{
+        width:100%;
+    }
+    .click-number .btn-default{
+        background:#fff;
+        color:#666;
+        border:1px solid #ccc;
+        height:25px;
+        line-height:25px;
+        width:15px;
+        padding:0px 3px;
+    }
+    .wrapper-index .llsjmnfx .info{
+          display:-webkit-box;
+          background:#fff;
+          padding:5px 10px;
+      }
+.wrapper-index .llsjmnfx .info .title{
+    font-weight:bold;
+}
+      .wrapper-index .llsjmnfx .left{
+          -webkit-box-flex:1;
+      }
+    .wrapper-index .llsjmnfx .price{
+        color:#bb2020;
+        font-size:14px;
+        margin-top:10px;
+    }
+    .wrapper-index .llsjmnfx .amount{
+        margin-top:10px;
+        color:#888;
+        font-size:11px;
+    }
+   .wrapper-index .llsjmnfx .btn-donation{
+       display:block;
+       color:#fff;
+       font-size:14px;
+       text-align:center;
+       letter-spacing:3px;
+       margin-top:5px;
+   }
+    .wrapper-index .llsjmnfx .btn-donation img{
+        width:80px;
+    }
+.click-number input {
+    height:25px;
+    width:32px;
+}
+.slowwheel {-webkit-animation: slowwheel 2s linear both;-webkit-animation-iteration-count:infinite;animation: slowwheel 2s  both;}
+@-webkit-keyframes slowwheel {0% {-webkit-transform: rotate(0deg);}100% {-webkit-transform: rotate(360deg);}}
+@keyframes slowwheel {0% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}100% {-webkit-transform: rotate(360deg);transform: rotate(360deg);}}

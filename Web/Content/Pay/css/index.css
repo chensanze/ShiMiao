@@ -1,0 +1,32 @@
+﻿.btn-container {
+    display:-webkit-box;
+    -webkit-box-align:center;
+}
+.btn-pay{
+    -webkit-box-flex:1;
+    margin:20px;
+    padding:10px 20px;
+    display:block;
+    text-align:center;
+    background:#db1313;
+    color:#f0dec0;
+    border-radius:5px;
+}
+.payok-body{
+    background-image:url(../images/payokbg.jpg);
+    background-size:cover;
+}
+.wrapper-payok .btn-container{
+    position:absolute;
+    bottom:320px;
+    left:0px;
+    right:0px;
+    text-align:center;
+}
+.wrapper-payok a{
+    display:block;
+    margin:0 auto;
+}
+.wrapper-payok .btn-back{
+    width:100px;
+}
